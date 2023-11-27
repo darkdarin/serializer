@@ -1,0 +1,38 @@
+{
+    "name": "darkdarin/serializer",
+    "description": "Some helpers for serializing (hydrations)",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Babushkin Pavel",
+            "email": "idarksoft@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DarkDarin\\Serializer\\": "src/"
+        }
+    },
+    "require": {
+        "php": "8.2.*|8.3.*",
+        "doctrine/annotations": "^2.0",
+        "symfony/property-access": "^6.3",
+        "symfony/property-info": "^6.3",
+        "symfony/serializer": "^6.3"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.1",
+        "illuminate/support": "^10.0",
+        "roave/security-advisories": "dev-latest"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "DarkDarin\\Serializer\\SerializerServiceProvider"
+            ]
+        },
+        "hyperf": {
+            "config": "DarkDarin\\Serializer\\ConfigProvider"
+        }
+    }
+}
