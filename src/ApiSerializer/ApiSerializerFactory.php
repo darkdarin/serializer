@@ -2,6 +2,7 @@
 
 namespace DarkDarin\Serializer\ApiSerializer;
 
+use DarkDarin\Serializer\Normalizers\CarbonNormalizer;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
@@ -46,6 +47,7 @@ class ApiSerializerFactory
             new ArrayDenormalizer(),
             new BackedEnumNormalizer(),
             new JsonSerializableNormalizer(),
+            new CarbonNormalizer(),
             new ObjectNormalizer(
                 classMetadataFactory:  $classMetadataFactory,
                 nameConverter:         $metadataAwareNameConverter,
