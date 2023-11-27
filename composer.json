@@ -1,6 +1,7 @@
 {
     "name": "darkdarin/serializer",
     "description": "Some helpers for serializing (hydrations)",
+    "license": "MIT",
     "type": "package",
     "authors": [
         {
