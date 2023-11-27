@@ -1,6 +1,6 @@
 <?php
 
-namespace DarkDarin\Serializer;
+namespace DarkDarin\Serializer\ApiSerializer;
 
 use Symfony\Component\Serializer\Encoder\DecoderInterface;
 use Symfony\Component\Serializer\Encoder\EncoderInterface;

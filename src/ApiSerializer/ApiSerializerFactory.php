@@ -1,6 +1,6 @@
 <?php
 
-namespace DarkDarin\Serializer;
+namespace DarkDarin\Serializer\ApiSerializer;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;

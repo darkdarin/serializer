@@ -2,6 +2,10 @@
 
 namespace DarkDarin\Serializer;
 
+use DarkDarin\Serializer\ApiSerializer\ApiSerializerFactory;
+use DarkDarin\Serializer\ApiSerializer\ApiSerializerInterface;
+use DarkDarin\Serializer\MethodParametersSerializer\MethodParametersSerializer;
+use DarkDarin\Serializer\MethodParametersSerializer\MethodParametersSerializerInterface;
 use Illuminate\Support\ServiceProvider;
 
 /**

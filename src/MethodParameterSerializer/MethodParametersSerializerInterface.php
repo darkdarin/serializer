@@ -1,6 +1,6 @@
 <?php
 
-namespace DarkDarin\Serializer;
+namespace DarkDarin\Serializer\MethodParametersSerializer;
 
 interface MethodParametersSerializerInterface
 {

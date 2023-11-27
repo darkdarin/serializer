@@ -1,7 +1,8 @@
 <?php
 
-namespace DarkDarin\Serializer;
+namespace DarkDarin\Serializer\MethodParametersSerializer;
 
+use DarkDarin\Serializer\ApiSerializer\ApiSerializerInterface;
 use Symfony\Component\Serializer\Exception\ExceptionInterface;
 
 /**
