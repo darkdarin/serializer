@@ -4,8 +4,8 @@ namespace DarkDarin\Serializer;
 
 use DarkDarin\Serializer\ApiSerializer\ApiSerializerFactory;
 use DarkDarin\Serializer\ApiSerializer\ApiSerializerInterface;
-use DarkDarin\Serializer\MethodParametersSerializer\MethodParametersSerializer;
-use DarkDarin\Serializer\MethodParametersSerializer\MethodParametersSerializerInterface;
+use DarkDarin\Serializer\MethodParametersSerializer\MethodParametersMapper;
+use DarkDarin\Serializer\MethodParametersSerializer\MethodParametersMapperInterface;
 
 /**
  * @psalm-api
@@ -17,7 +17,7 @@ class ConfigProvider
         return [
             'dependencies' => [
                 ApiSerializerInterface::class => ApiSerializerFactory::class,
-                MethodParametersSerializerInterface::class => MethodParametersSerializer::class,
+                MethodParametersMapperInterface::class => MethodParametersMapper::class,
             ],
         ];
     }

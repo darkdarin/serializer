@@ -4,8 +4,8 @@ namespace DarkDarin\Serializer;
 
 use DarkDarin\Serializer\ApiSerializer\ApiSerializerFactory;
 use DarkDarin\Serializer\ApiSerializer\ApiSerializerInterface;
-use DarkDarin\Serializer\MethodParametersSerializer\MethodParametersSerializer;
-use DarkDarin\Serializer\MethodParametersSerializer\MethodParametersSerializerInterface;
+use DarkDarin\Serializer\MethodParametersSerializer\MethodParametersMapper;
+use DarkDarin\Serializer\MethodParametersSerializer\MethodParametersMapperInterface;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -16,6 +16,6 @@ class SerializerServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(ApiSerializerInterface::class, (new ApiSerializerFactory())(...));
-        $this->app->singleton(MethodParametersSerializerInterface::class, MethodParametersSerializer::class);
+        $this->app->singleton(MethodParametersMapperInterface::class, MethodParametersMapper::class);
     }
 }
