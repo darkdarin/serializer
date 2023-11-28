@@ -8,6 +8,7 @@ use Symfony\Component\PropertyInfo\Extractor\PhpDocExtractor;
 use Symfony\Component\PropertyInfo\Extractor\ReflectionExtractor;
 use Symfony\Component\PropertyInfo\PropertyInfoExtractor;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Mapping\ClassDiscriminatorFromClassMetadata;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
 use Symfony\Component\Serializer\Mapping\Loader\AnnotationLoader;
 use Symfony\Component\Serializer\NameConverter\MetadataAwareNameConverter;
@@ -37,6 +38,8 @@ class ApiSerializerFactory
             new ReflectionExtractor(),
         ]);
 
+        $discriminator = new ClassDiscriminatorFromClassMetadata($classMetadataFactory);
+
         $context = [
             AbstractObjectNormalizer::DISABLE_TYPE_ENFORCEMENT => true,
             AbstractObjectNormalizer::SKIP_NULL_VALUES => true,
@@ -49,10 +52,11 @@ class ApiSerializerFactory
             new JsonSerializableNormalizer(),
             new CarbonNormalizer(),
             new ObjectNormalizer(
-                classMetadataFactory:  $classMetadataFactory,
-                nameConverter:         $metadataAwareNameConverter,
-                propertyTypeExtractor: $extractor,
-                defaultContext:        $context,
+                classMetadataFactory:       $classMetadataFactory,
+                nameConverter:              $metadataAwareNameConverter,
+                propertyTypeExtractor:      $extractor,
+                classDiscriminatorResolver: $discriminator,
+                defaultContext:             $context,
             ),
         ];
     }
