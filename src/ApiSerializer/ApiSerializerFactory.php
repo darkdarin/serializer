@@ -11,6 +11,7 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Mapping\ClassDiscriminatorFromClassMetadata;
 use Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory;
 use Symfony\Component\Serializer\Mapping\Loader\AnnotationLoader;
+use Symfony\Component\Serializer\Mapping\Loader\AttributeLoader;
 use Symfony\Component\Serializer\NameConverter\MetadataAwareNameConverter;
 use Symfony\Component\Serializer\Normalizer\AbstractObjectNormalizer;
 use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
@@ -27,9 +28,7 @@ class ApiSerializerFactory
 
     private function getDefaultNormalizers(): array
     {
-        $classMetadataFactory = new ClassMetadataFactory(
-            new AnnotationLoader(new AnnotationReader())
-        );
+        $classMetadataFactory = new ClassMetadataFactory(new AttributeLoader());
 
         $metadataAwareNameConverter = new MetadataAwareNameConverter($classMetadataFactory);
 
